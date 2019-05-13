@@ -1,7 +1,14 @@
 import React from "react";
+import classes from "./DrawerToggle.css";
 
-const DrawewToggle = props => {
-	return <div onClick={props.sideDrawerOpenHandler}>Menu</div>;
+const DrawerToggle = props => {
+	return (
+		<div onClick={props.sideDrawerOpenHandler} className={classes.DrawerToggle}>
+			<div />
+			<div />
+			<div />
+		</div>
+	);
 };
 
-export default DrawewToggle;
+export default DrawerToggle;
