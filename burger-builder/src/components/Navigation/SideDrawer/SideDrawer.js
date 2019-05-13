@@ -3,17 +3,25 @@ import NavigationItems from "./../NavigationItems/NavigationItems";
 
 import classes from "./SideDrawer.css";
 import Logo from "./../../Logo/Logo";
-const SideDrawer = () => {
-	//todo
+import Aux from "./../../../hoc/_Aux";
+import Backdrop from "./../../UI/Backdrop/Backdrop";
+const SideDrawer = props => {
+	let attachedClasses = [classes.SideDrawer, classes.Close];
+	if (props.show) {
+		attachedClasses = [classes.SideDrawer, classes.Open];
+	}
 	return (
-		<div className={classes.SideDrawer}>
-			<div className={classes.Logo}>
-				<Logo />
+		<Aux>
+			<Backdrop show={props.show} clicked={props.closed} />
+			<div className={attachedClasses.join(" ")}>
+				<div className={classes.Logo}>
+					<Logo />
+				</div>
+				<nav>
+					<NavigationItems />
+				</nav>
 			</div>
-			<nav>
-				<NavigationItems />
-			</nav>
-		</div>
+		</Aux>
 	);
 };
 
